@@ -7,6 +7,7 @@ present the ideas in a coherent manner -
 - [The univ.ai content](https://github.com/univai-summerschool-2019/GenerativeModels)
 - [This neat blogpost](https://blog.evjang.com/2016/06/generative-adversarial-nets-in.html), and [its github repo](https://github.com/ericjang/genadv_tutorial/)
 - [This distill.pub post](https://distill.pub/2019/gan-open-problems/)
+- [This neat keras implementation](https://github.com/eriklindernoren/Keras-GAN/blob/master/gan/gan.py)
 
 ## Note
 
