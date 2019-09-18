@@ -56,6 +56,16 @@ import warnings
 warnings.filterwarnings('ignore')
 ```
 
+## The Basics
+Let's visually recapitulate a GAN (with some help from [here](https://www.sicara.ai/blog/2018-03-20-GAN-with-Keras-application-to-image-deblurring)).
+![Visual GAN](https://images.ctfassets.net/be04ylp8y0qc/3wWpskgvy8m8jmefpdXMAz/8852c6a5ed47556791632876b8c5910b/1_N4oqJsGmH-KZg3Vqrm_uYw.jpg?fm=webp)
+Essentially, without ANY probability or Bayes we can simply do the following:
+1. Fake inputs with a generator and some noise
+2. Make a discriminator, train it on both real and fake inputs
+3. Train the model with the discriminator (weights frozen) chained to the generator
+
+We chain the networks to prevent feedback on the generator outputs, the only measure is if the discriminator accepted the samples generated.
+
 ## Example 1: The MNIST GAN
 This is a simple example of a `keras` workflow which ran for about half an hour on my quad core i7 machine.
 The GIF is fun, but the main thing to see is the initial and final images. This section is largely from [this repository](https://github.com/eriklindernoren/Keras-GAN/). 
@@ -260,7 +270,7 @@ plt.plot(xs, norm.pdf(xs,loc=mu,scale=sigma))
 
 
 
-![png](output_6_1.png)
+![png](output_7_1.png)
 
 
 
@@ -369,7 +379,7 @@ plt.title('Initial Decision Boundary')
 
 
 
-![png](output_16_1.png)
+![png](output_17_1.png)
 
 
 
@@ -397,7 +407,7 @@ plt.title('Training Loss')
 
 
 
-![png](output_18_1.png)
+![png](output_19_1.png)
 
 
 
@@ -407,7 +417,7 @@ plot_d0(D,input_node)
 ```
 
 
-![png](output_19_0.png)
+![png](output_20_0.png)
 
 
 
@@ -520,7 +530,7 @@ plt.title('Before Training')
 
 
 
-![png](output_28_1.png)
+![png](output_29_1.png)
 
 
 ### Stratified Sampling
@@ -573,7 +583,7 @@ plt.legend()
 
 
 
-![png](output_31_1.png)
+![png](output_32_1.png)
 
 
 
@@ -583,7 +593,7 @@ plot_fig()
 ```
 
 
-![png](output_32_0.png)
+![png](output_33_0.png)
 
 
 ## Open Questions
